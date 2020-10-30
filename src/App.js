@@ -23,20 +23,20 @@ function App() {
     <Router>
       <Navbar/>
       <Switch>
-        <Route path="/" exact component={HomeNew} />
-        <Route path="/HowToUse" exact component={HowToUse} />
+        <Route path="/GPRC" exact component={HomeNew} />
+        <Route path="/GPRC/HowToUse" exact component={HowToUse} />
         
-        <Route path="/DefaultTemplate" exact component={DefaultTemplate}/>
-        <Route path="/Templates" exact component={Templates} />
-        <Route path="/simple_1" exact component={simple_1} />
-        <Route path="/simple_2" exact component={simple_2} />
-        <Route path="/simple_3" exact component={simple_3} />
+        <Route path="/GPRC/DefaultTemplate" exact component={DefaultTemplate}/>
+        <Route path="/GPRC/Templates" exact component={Templates} />
+        <Route path="/GPRC/simple_1" exact component={simple_1} />
+        <Route path="/GPRC/simple_2" exact component={simple_2} />
+        <Route path="/GPRC/simple_3" exact component={simple_3} />
 
-        <Route path="/badges_1" exact component={badges_1} />
-        <Route path="/badges_2" exact component={badges_2} />
-        <Route path="/badges_3" exact component={badges_3} />
+        <Route path="/GPRC/badges_1" exact component={badges_1} />
+        <Route path="/GPRC/badges_2" exact component={badges_2} />
+        <Route path="/GPRC/badges_3" exact component={badges_3} />
 
-        <Route path="/icons_1" exact component={icons_1} />
+        <Route path="/GPRC/icons_1" exact component={icons_1} />
 
         
       </Switch> 
