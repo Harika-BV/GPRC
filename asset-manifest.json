@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/GPRC/static/css/main.eb4dc68a.chunk.css",
+    "main.js": "/GPRC/static/js/main.b70effba.chunk.js",
+    "main.js.map": "/GPRC/static/js/main.b70effba.chunk.js.map",
+    "runtime-main.js": "/GPRC/static/js/runtime-main.6eb66492.js",
+    "runtime-main.js.map": "/GPRC/static/js/runtime-main.6eb66492.js.map",
+    "static/js/2.23278d72.chunk.js": "/GPRC/static/js/2.23278d72.chunk.js",
+    "static/js/2.23278d72.chunk.js.map": "/GPRC/static/js/2.23278d72.chunk.js.map",
+    "index.html": "/GPRC/index.html",
+    "precache-manifest.6672e22f3e6c8374df6e2b60f1ef6d62.js": "/GPRC/precache-manifest.6672e22f3e6c8374df6e2b60f1ef6d62.js",
+    "service-worker.js": "/GPRC/service-worker.js",
+    "static/css/main.eb4dc68a.chunk.css.map": "/GPRC/static/css/main.eb4dc68a.chunk.css.map",
+    "static/js/2.23278d72.chunk.js.LICENSE.txt": "/GPRC/static/js/2.23278d72.chunk.js.LICENSE.txt",
+    "static/media/gprc-1.svg": "/GPRC/static/media/gprc-1.afe0f4b9.svg",
+    "static/media/image1.png": "/GPRC/static/media/image1.e64a5ee6.png",
+    "static/media/image2.png": "/GPRC/static/media/image2.c6f003d3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6eb66492.js",
+    "static/js/2.23278d72.chunk.js",
+    "static/css/main.eb4dc68a.chunk.css",
+    "static/js/main.b70effba.chunk.js"
+  ]
+}
