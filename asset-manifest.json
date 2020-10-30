@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/GPRC/static/css/main.eb4dc68a.chunk.css",
-    "main.js": "/GPRC/static/js/main.b70effba.chunk.js",
-    "main.js.map": "/GPRC/static/js/main.b70effba.chunk.js.map",
+    "main.js": "/GPRC/static/js/main.6bc634a5.chunk.js",
+    "main.js.map": "/GPRC/static/js/main.6bc634a5.chunk.js.map",
     "runtime-main.js": "/GPRC/static/js/runtime-main.6eb66492.js",
     "runtime-main.js.map": "/GPRC/static/js/runtime-main.6eb66492.js.map",
     "static/js/2.23278d72.chunk.js": "/GPRC/static/js/2.23278d72.chunk.js",
     "static/js/2.23278d72.chunk.js.map": "/GPRC/static/js/2.23278d72.chunk.js.map",
     "index.html": "/GPRC/index.html",
-    "precache-manifest.6672e22f3e6c8374df6e2b60f1ef6d62.js": "/GPRC/precache-manifest.6672e22f3e6c8374df6e2b60f1ef6d62.js",
+    "precache-manifest.afd92ccd9a0b4bcea17b14779e62df63.js": "/GPRC/precache-manifest.afd92ccd9a0b4bcea17b14779e62df63.js",
     "service-worker.js": "/GPRC/service-worker.js",
     "static/css/main.eb4dc68a.chunk.css.map": "/GPRC/static/css/main.eb4dc68a.chunk.css.map",
     "static/js/2.23278d72.chunk.js.LICENSE.txt": "/GPRC/static/js/2.23278d72.chunk.js.LICENSE.txt",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.6eb66492.js",
     "static/js/2.23278d72.chunk.js",
     "static/css/main.eb4dc68a.chunk.css",
-    "static/js/main.b70effba.chunk.js"
+    "static/js/main.6bc634a5.chunk.js"
   ]
 }
