@@ -1,0 +1,19 @@
+input{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #F2F2F2;
+	box-sizing: border-box;
+}
+
+.form-group {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-label{
+	color: #343a40;
+}

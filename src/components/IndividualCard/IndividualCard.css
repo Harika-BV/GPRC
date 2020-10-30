@@ -1,0 +1,20 @@
+.StyledContainer{
+	padding: 25px 12px 18px;
+	background-color: #fff;
+	width: 300px;
+	height: 400px;
+	font-size: 12px;
+	text-align: center;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+}
+
+.StyledContainer > img{
+	border: 1px solid #ccc;
+}
+
+@media (max-width: 500px) {
+	.title{
+    	font-size: 1rem;
+	}
+}
+

@@ -1,0 +1,11 @@
+.class_howToUse{
+	padding: 120px;
+	white-space: pre-line;
+	line-height: 50px;
+}
+
+@media screen and (max-width: 960px){
+	.class_howToUse{
+		padding: 50px;
+	}
+}
