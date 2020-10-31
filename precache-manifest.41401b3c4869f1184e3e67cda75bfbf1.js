@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e0146b73049d5eb7787889f27076e16e",
+    "revision": "339c948101ab8e7497cb5221a35ad787",
     "url": "/GPRC/index.html"
   },
   {
-    "revision": "77758837b47fa61ce2ba",
-    "url": "/GPRC/static/css/main.235ae032.chunk.css"
+    "revision": "7a796f99b684ba66d9b4",
+    "url": "/GPRC/static/css/main.572e13a1.chunk.css"
   },
   {
     "revision": "d4b3e2557f7f62a90446",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GPRC/static/js/2.2242fe64.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "77758837b47fa61ce2ba",
-    "url": "/GPRC/static/js/main.51f00caf.chunk.js"
+    "revision": "7a796f99b684ba66d9b4",
+    "url": "/GPRC/static/js/main.bdfc9d7a.chunk.js"
   },
   {
     "revision": "e946cd5e53ad32cd26f6",
@@ -36,16 +36,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GPRC/static/media/badges_3.bf133dd4.jpg"
   },
   {
-    "revision": "afe0f4b92ce45910515d18924a33450c",
-    "url": "/GPRC/static/media/gprc-1.afe0f4b9.svg"
-  },
-  {
     "revision": "e64a5ee6191008b978ee0391570e1eee",
     "url": "/GPRC/static/media/image1.e64a5ee6.png"
   },
   {
     "revision": "c6f003d326f30860903e4d0c912288b4",
     "url": "/GPRC/static/media/image2.c6f003d3.png"
+  },
+  {
+    "revision": "c8c7ab6a33c420c294116b628af7f6dd",
+    "url": "/GPRC/static/media/logo_gprc.c8c7ab6a.png"
   },
   {
     "revision": "3671cce9423add1f582c32ba821ae8c2",
