@@ -16,7 +16,7 @@ function HomeNew() {
 							<div className="home__hero-text-wrapper">
 								<div className="top-line">Create Stunning</div>
 								<h1 className = "heading">Github Profiles</h1>
-								<Link to="/DefaultTemplate">
+								<Link to="/GPRC/DefaultTemplate">
 									<Button buttonSize="btn--wide" buttonColor="red">Get Started</Button>
 								</Link>
 							</div>
@@ -68,7 +68,7 @@ function HomeNew() {
 								<p className="home__hero-subtitle2"><GoZap/> An open source project</p>
 
 								
-								<Link to="/DefaultTemplate">
+								<Link to="/GPRC/DefaultTemplate">
 									<Button buttonSize="btn--wide" buttonColor="red">Get Started</Button>
 								</Link>
 							</div>

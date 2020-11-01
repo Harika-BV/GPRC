@@ -9,7 +9,7 @@ class badges_2 extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			markdown:"# Hi there, I'm Harika B V 👋🏼👨🏻‍💻\n\nA tech enthusiast with passion to solve problems and to make things. Proven skills in Android application development, python programming, UI/UX Design with work experience in various organizations and technical teams and I believe that I am a versatile learner and can get going with any sort of work.\n\n- 💼 I am currently working Github Profile Readme Creator\n\n- ✍️ I am currently learning React JS\n\n- 🌱  I am currently looking to collaborate on React JS\n\n![Github stats](https://github-readme-stats.vercel.app/api?username=harika-bv&theme=light&show_icons=true)",
+			markdown:"# Hi there, I'm Harika B V 👋🏼👨🏻‍💻\n\nA tech enthusiast with passion to solve problems and to make things. Proven skills in Android application development, python programming, UI/UX Design with work experience in various organizations and technical teams and I believe that I am a versatile learner and can get going with any sort of work.\n\n- 💼 I am currently working Github Profile Readme Creator\n\n- ✍️ I am currently learning React JS\n\n- 🌱  I am currently looking to collaborate on React JS\n\n![Github stats](https://github-readme-stats.vercel.app/api?username=harika-bv&theme=light&show_icons=true)\n\n<p align='center'> <a href = https://www.linkedin.com/in/harika-b-v><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg height='30' weight='30'></a> • <a href = https://www.behance.net/harikabv><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/behance.svg height='30' weight='30'></a> • <a href = https://github.com/harika-bv><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg height='30' weight='30'></a> • <a href = https://twitter.com/harikabv><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/github.svg height='30' weight='30'></a></p>",
 			name:'Harika B V',
 			about:'A tech enthusiast with passion to solve problems and to make things. Proven skills in Android application development, python programming, UI/UX Design with work experience in various organisations and technical teams and I believe that I am a versatile learner and can get going with any sort of work.',
 			skills:'Java | Python | Android',
@@ -28,16 +28,19 @@ class badges_2 extends Component{
 		this.updateMarkdown = this.updateMarkdown.bind(this);
 	}
 	
-	copyToClipboard = (e) => {
-		var textField = document.createElement('textarea')
-	    textField.innerText = this.state.markdown
-	    document.body.appendChild(textField)
-	    textField.select()
-	    document.execCommand('copy')
-	    textField.remove()
-	    alert('Markdown copied successfully');
-
-  	};
+	copyToClip = (e) => {
+		var tmp = document.createElement("textarea");
+		tmp.value = this.state.markdown;
+		tmp.style.height = "0";
+		tmp.style.overflow = "hidden";
+		tmp.style.position = "fixed";
+		document.body.appendChild(tmp);
+		tmp.focus();
+		tmp.select();
+		document.execCommand("copy");
+		document.body.removeChild(tmp);
+		alert('Profile readme is copied to clipboard');
+	};
 
   	download = (e) => {
 		const element = document.createElement("a");
@@ -51,18 +54,16 @@ class badges_2 extends Component{
 
 	updateMarkdown(name, about, skills,portfolio, current__work, current__learning,current__collab, github__Username, linkedin__Username, twitter__Username,behance__Username , email){
 			
-		var markdownUpdate = "# Hey 👋, This is ";
+		var markdownUpdate = "# Hi there, I'm ";
 		if(name){
-			 markdownUpdate += name + "\n";
+			 markdownUpdate += name + "👋🏼👨🏻‍💻\n";
 		}
 		if(about){
 			markdownUpdate += "### About me 🤓\n" ;
 			markdownUpdate += about;
 		}
-		if(skills){
-			markdownUpdate += "\n\n**Skills:** " + skills;
-		}
 		if(current__work){
+			markdownUpdate += "\n\n### I'm currently" ;
 			markdownUpdate += "\n\n- 💼 I am currently working "+current__work;
 		}
 		if(current__learning){
@@ -71,6 +72,10 @@ class badges_2 extends Component{
 		if(current__collab){
 			markdownUpdate += "\n\n- 🌱  I am currently looking to collaborate on "+current__collab;
 		}
+		if(github__Username){
+			markdownUpdate += "\n\n![Github stats](https://github-readme-stats.vercel.app/api?username="+ github__Username +"&theme=light&show_icons=true)";
+		}
+		markdownUpdate += "<h4 align='center'>📫 Reach me on</h4>\n\n<p align='center'>"; 
 		if(linkedin__Username){
 			markdownUpdate += "\n\n<a href = https://www.linkedin.com/in/"+ linkedin__Username + "><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg height='30' weight='30'></a>";
 		}
@@ -104,7 +109,7 @@ class badges_2 extends Component{
 				<div className ="home-row">
 					<div className="home-col-left">
 						<div className="headingContainer header">
-							Markdown Preview (Simple-1 Template)
+							Markdown Preview (Modern Template)
 						</div>
 						
 						<ReactMarkdownWithHtml  
@@ -114,7 +119,7 @@ class badges_2 extends Component{
                 		/>
                 		
                 		<div className = "buttons">
-							<Button onClick={this.copyToClipboard} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
+							<Button onClick={this.copyToClip} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
 							<Button onClick={this.download} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Download README</Button>
 						</div>
 					</div>
@@ -139,14 +144,7 @@ class badges_2 extends Component{
 							        controlFunc={this.handleTextChange}
 							        placeholder={'Type about you here'}
 							        value={this.state.about} />
-						
-								<TextInput
-									inputType = {'text'}
-									title = {'Skills'}
-									name = {'skill'}
-									controlFunc = {this.handleTextChange}
-									placeholder={'Type your skills here'} 
-									value={this.state.skills} />
+		
 	 						 </form>
 	                        </div> 
 
@@ -183,15 +181,7 @@ class badges_2 extends Component{
 						 
 					        <div label="Social"> 
 				              <form className="home-container">
-
-								<TextInput
-									inputType = {'text'}
-									title = {'Portfolio'}
-									name = {'portfolio'}
-									controlFunc = {this.handleTextChange}
-									placeholder={'Type your skills here'} 
-									value={this.state.portfolio} />
-								
+	
 								<TextInput
 									inputType = {'text'}
 									title = {'Linkedin Username'}
@@ -223,16 +213,7 @@ class badges_2 extends Component{
 									controlFunc = {this.handleTextChange}
 									placeholder={'Type your Behance username here'}
 									value={this.state.behance__Username}  />
-
-								<TextInput
-									inputType = {'text'}
-									title = {'Email'}
-									name = {'email'}
-									controlFunc = {this.handleTextChange}
-									placeholder={'Type your Email here'} 
-									value={this.state.email} />
-		
-						        </form>
+					        </form>
 						    </div> 
 						</Tabs> 	
 					</div>					

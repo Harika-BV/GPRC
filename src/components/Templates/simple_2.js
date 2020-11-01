@@ -28,16 +28,19 @@ class simple_2 extends Component{
 		this.updateMarkdown = this.updateMarkdown.bind(this);
 	}
 	
-	copyToClipboard = (e) => {
-		var textField = document.createElement('textarea')
-	    textField.innerText = this.state.markdown
-	    document.body.appendChild(textField)
-	    textField.select()
-	    document.execCommand('copy')
-	    textField.remove()
-	    alert('Markdown copied successfully');
-
-  	};
+	copyToClip = (e) => {
+		var tmp = document.createElement("textarea");
+		tmp.value = this.state.markdown;
+		tmp.style.height = "0";
+		tmp.style.overflow = "hidden";
+		tmp.style.position = "fixed";
+		document.body.appendChild(tmp);
+		tmp.focus();
+		tmp.select();
+		document.execCommand("copy");
+		document.body.removeChild(tmp);
+		alert('Profile readme is copied to clipboard');
+	};
 
   	download = (e) => {
 		const element = document.createElement("a");
@@ -51,9 +54,9 @@ class simple_2 extends Component{
 
 	updateMarkdown(name, about, skills,portfolio, current__work, current__learning,current__collab, github__Username, linkedin__Username, twitter__Username,behance__Username , email){
 			
-		var markdownUpdate = "# Hey 👋, This is ";
+		var markdownUpdate = "";
 		if(name){
-			 markdownUpdate += name + "\n";
+			 markdownUpdate += "# "+name + "\n";
 		}
 		if(about){
 			markdownUpdate += "### About me 🤓\n" ;
@@ -104,7 +107,7 @@ class simple_2 extends Component{
 				<div className ="home-row">
 					<div className="home-col-left">
 						<div className="headingContainer header">
-							Markdown Preview (Simple-2 Template)
+							Markdown Preview (Simple Template)
 						</div>
 						
 						<ReactMarkdownWithHtml  
@@ -114,7 +117,7 @@ class simple_2 extends Component{
                 		/>
                 		
                 		<div className = "buttons">
-							<Button onClick={this.copyToClipboard} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
+							<Button onClick={this.copyToClip} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
 							<Button onClick={this.download} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Download README</Button>
 						</div>
 					</div>
@@ -143,7 +146,7 @@ class simple_2 extends Component{
 								<TextInput
 									inputType = {'text'}
 									title = {'Skills'}
-									name = {'skill'}
+									name = {'skills'}
 									controlFunc = {this.handleTextChange}
 									placeholder={'Type your skills here'} 
 									value={this.state.skills} />

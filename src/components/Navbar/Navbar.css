@@ -125,13 +125,6 @@
     width: 100%;
   }
 
-  .navbar-logo{
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%,50%);
-  }
-
   .menu-icon{
     display: block;
     position: absolute;

@@ -10,7 +10,7 @@ const Card = ({
 }) => (
 
 	<div className="StyledContainer">
-		<img src={image_src} alt={image_alt} height="250px" width="200px"/>
+		<img className="image_individual"src={image_src} alt={image_alt}/>
 		<br/><br/>
 		<h2 className="title">{title}</h2>
 	</div>

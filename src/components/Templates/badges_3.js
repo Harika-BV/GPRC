@@ -28,16 +28,19 @@ class badges_3 extends Component{
 		this.updateMarkdown = this.updateMarkdown.bind(this);
 	}
 	
-	copyToClipboard = (e) => {
-		var textField = document.createElement('textarea')
-	    textField.innerText = this.state.markdown
-	    document.body.appendChild(textField)
-	    textField.select()
-	    document.execCommand('copy')
-	    textField.remove()
-	    alert('Markdown copied successfully');
-
-  	};
+	copyToClip = (e) => {
+		var tmp = document.createElement("textarea");
+		tmp.value = this.state.markdown;
+		tmp.style.height = "0";
+		tmp.style.overflow = "hidden";
+		tmp.style.position = "fixed";
+		document.body.appendChild(tmp);
+		tmp.focus();
+		tmp.select();
+		document.execCommand("copy");
+		document.body.removeChild(tmp);
+		alert('Profile readme is copied to clipboard');
+	};
 
   	download = (e) => {
 		const element = document.createElement("a");
@@ -51,7 +54,7 @@ class badges_3 extends Component{
 
 	updateMarkdown(name, about, skills,portfolio, current__work, current__learning,current__collab, github__Username, linkedin__Username, twitter__Username,behance__Username , email){
 			
-		var markdownUpdate = "# Hey 👋, This is ";
+		var markdownUpdate = "# Hi there 👋 I'm ";
 		if(name){
 			 markdownUpdate += name + "\n";
 		}
@@ -60,22 +63,18 @@ class badges_3 extends Component{
 			markdownUpdate += about;
 		}
 		if(skills){
-			markdownUpdate += "\n\n**Skills:** " + skills;
+			markdownUpdate += "\n\n## My Skills include\n\n" + skills;
 		}
-		if(current__work){
-			markdownUpdate += "\n\n- 💼 I am currently working "+current__work;
+		
+		markdownUpdate += "\n\n---\n\n";
+		if(github__Username){
+			markdownUpdate += "\n\n![Github stats](https://github-readme-stats.vercel.app/api?username="+github__Username+"&theme=dark&show_icons=true)";
 		}
-		if(current__learning){
-			markdownUpdate += "\n\n- ✍️ I am currently learning "+current__learning;
-		}
-		if(current__collab){
-			markdownUpdate += "\n\n- 🌱  I am currently looking to collaborate on "+current__collab;
-		}
+
 		if(linkedin__Username){
 			markdownUpdate += "\n\n<a href = https://www.linkedin.com/in/"+ linkedin__Username + "><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg height='30' weight='30'></a>";
 		}
 		if(github__Username){
-			
 			markdownUpdate += " • <a href = https://github.com/"+github__Username+"><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/github.svg height='30' weight='30'></a>";
 		}
 		if(twitter__Username){
@@ -104,7 +103,7 @@ class badges_3 extends Component{
 				<div className ="home-row">
 					<div className="home-col-left">
 						<div className="headingContainer header">
-							Markdown Preview (Simple-1 Template)
+							Markdown Preview (Functional Template)
 						</div>
 						
 						<ReactMarkdownWithHtml  
@@ -114,7 +113,7 @@ class badges_3 extends Component{
                 		/>
                 		
                 		<div className = "buttons">
-							<Button onClick={this.copyToClipboard} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
+							<Button onClick={this.copyToClip} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
 							<Button onClick={this.download} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Download README</Button>
 						</div>
 					</div>
@@ -143,7 +142,7 @@ class badges_3 extends Component{
 								<TextInput
 									inputType = {'text'}
 									title = {'Skills'}
-									name = {'skill'}
+									name = {'skills'}
 									controlFunc = {this.handleTextChange}
 									placeholder={'Type your skills here'} 
 									value={this.state.skills} />

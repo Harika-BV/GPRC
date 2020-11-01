@@ -13,7 +13,6 @@ class badges_1 extends Component{
 			name:'Harika B V',
 			about:'A tech enthusiast with passion to solve problems and to make things. Proven skills in Android application development, python programming, UI/UX Design with work experience in various organisations and technical teams and I believe that I am a versatile learner and can get going with any sort of work.',
 			skills:'Java | Python | Android',
-			portfolio:'www.harikabv.com',
 			current__work : 'Github Profile Readme Creator',
 			current__learning : 'React JS',
 			current__collab : 'Web Projects',
@@ -28,16 +27,19 @@ class badges_1 extends Component{
 		this.updateMarkdown = this.updateMarkdown.bind(this);
 	}
 	
-	copyToClipboard = (e) => {
-		var textField = document.createElement('textarea')
-	    textField.innerText = this.state.markdown
-	    document.body.appendChild(textField)
-	    textField.select()
-	    document.execCommand('copy')
-	    textField.remove()
-	    alert('Markdown copied successfully');
-
-  	};
+	copyToClip = (e) => {
+		var tmp = document.createElement("textarea");
+		tmp.value = this.state.markdown;
+		tmp.style.height = "0";
+		tmp.style.overflow = "hidden";
+		tmp.style.position = "fixed";
+		document.body.appendChild(tmp);
+		tmp.focus();
+		tmp.select();
+		document.execCommand("copy");
+		document.body.removeChild(tmp);
+		alert('Profile readme is copied to clipboard');
+	};
 
   	download = (e) => {
 		const element = document.createElement("a");
@@ -49,20 +51,18 @@ class badges_1 extends Component{
 	};
 
 
-	updateMarkdown(name, about, skills,portfolio, current__work, current__learning,current__collab, github__Username, linkedin__Username, twitter__Username,behance__Username , email){
+	updateMarkdown(name, about, skills, current__work, current__learning,current__collab, github__Username, linkedin__Username, twitter__Username,behance__Username , email){
 			
-		var markdownUpdate = "# Hey 👋, This is ";
+		var markdownUpdate = "# I am ";
 		if(name){
-			 markdownUpdate += name + "\n";
+			 markdownUpdate += name + "👷🏽‍♂️\n";
 		}
 		if(about){
 			markdownUpdate += "### About me 🤓\n" ;
-			markdownUpdate += about;
-		}
-		if(skills){
-			markdownUpdate += "\n\n**Skills:** " + skills;
+			markdownUpdate += about +"\n\n";
 		}
 		if(current__work){
+			markdownUpdate += "### I'm currently" ;
 			markdownUpdate += "\n\n- 💼 I am currently working "+current__work;
 		}
 		if(current__learning){
@@ -71,6 +71,13 @@ class badges_1 extends Component{
 		if(current__collab){
 			markdownUpdate += "\n\n- 🌱  I am currently looking to collaborate on "+current__collab;
 		}
+
+		if(skills){
+			markdownUpdate += "\n\n ### Stuff I'm really good at ";
+			markdownUpdate += "\n\n" + skills +"\n\n---\n\n";
+		}
+
+		markdownUpdate += "<h4 align='center'>📫 Reach me on</h4>\n\n<p align='center'>"; 
 		if(linkedin__Username){
 			markdownUpdate += "\n\n<a href = https://www.linkedin.com/in/"+ linkedin__Username + "><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/linkedin.svg height='30' weight='30'></a>";
 		}
@@ -85,6 +92,12 @@ class badges_1 extends Component{
 			markdownUpdate += " • <a href = https://www.behance.net/"+behance__Username+"><img src=https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/behance.svg height='30' weight='30'></a>";
 		}
 
+		markdownUpdate += "</p>\n\n";
+		if(github__Username){
+			markdownUpdate += "![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username="+github__Username+"&layout=compact)";
+		}
+
+		
 		this.setState({
 			markdown : markdownUpdate
 		});
@@ -94,7 +107,7 @@ class badges_1 extends Component{
 		this.setState({ 
 			[e.target.name]: e.target.value 
 		}, () => {
-			this.updateMarkdown(this.state.name, this.state.about, this.state.skills, this.state.portfolio,this.state.current__work, this.state.current__learning, this.state.current__collab, this.state.github__Username, this.state.linkedin__Username, this.state.twitter__Username, this.state.behance__Username , this.state.email);
+			this.updateMarkdown(this.state.name, this.state.about, this.state.skills,this.state.current__work, this.state.current__learning, this.state.current__collab, this.state.github__Username, this.state.linkedin__Username, this.state.twitter__Username, this.state.behance__Username , this.state.email);
 		});
 	}
 
@@ -104,7 +117,7 @@ class badges_1 extends Component{
 				<div className ="home-row">
 					<div className="home-col-left">
 						<div className="headingContainer header">
-							Markdown Preview (Simple-1 Template)
+							Markdown Preview (Creative Template)
 						</div>
 						
 						<ReactMarkdownWithHtml  
@@ -114,7 +127,7 @@ class badges_1 extends Component{
                 		/>
                 		
                 		<div className = "buttons">
-							<Button onClick={this.copyToClipboard} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
+							<Button onClick={this.copyToClip} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Copy Markdown</Button>
 							<Button onClick={this.download} buttonStyle = "btn--outline" buttonSize = "btn--medium" buttonColor = "primary">Download README</Button>
 						</div>
 					</div>
@@ -143,7 +156,7 @@ class badges_1 extends Component{
 								<TextInput
 									inputType = {'text'}
 									title = {'Skills'}
-									name = {'skill'}
+									name = {'skills'}
 									controlFunc = {this.handleTextChange}
 									placeholder={'Type your skills here'} 
 									value={this.state.skills} />
@@ -186,14 +199,6 @@ class badges_1 extends Component{
 
 								<TextInput
 									inputType = {'text'}
-									title = {'Portfolio'}
-									name = {'portfolio'}
-									controlFunc = {this.handleTextChange}
-									placeholder={'Type your skills here'} 
-									value={this.state.portfolio} />
-								
-								<TextInput
-									inputType = {'text'}
 									title = {'Linkedin Username'}
 									name = {'linkedin__Username'}
 									controlFunc = {this.handleTextChange}
@@ -223,15 +228,6 @@ class badges_1 extends Component{
 									controlFunc = {this.handleTextChange}
 									placeholder={'Type your Behance username here'}
 									value={this.state.behance__Username}  />
-
-								<TextInput
-									inputType = {'text'}
-									title = {'Email'}
-									name = {'email'}
-									controlFunc = {this.handleTextChange}
-									placeholder={'Type your Email here'} 
-									value={this.state.email} />
-		
 						        </form>
 						    </div> 
 						</Tabs> 	

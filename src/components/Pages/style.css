@@ -114,3 +114,31 @@ img[src*="#logo"]{
 .footer-container > p > a{
 	color: #F2F2F2;
 }
+
+
+@media screen and (max-width:600px){
+  .home-col-left{
+    width: 100%;
+    margin-bottom: 0.5em;
+    border: 1px solid  #ccc;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1); 
+  
+  }
+  .home-col-right{
+    width: 100%;
+    margin-bottom: 0.2em;
+    border: 1px solid  #ccc;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.1); 
+  
+  }
+
+  .templates{
+    padding: 1em;
+  }
+
+  .home-row{
+    padding: 1em;
+    height: 100%;
+    background-color: #252525; 
+  }
+}
