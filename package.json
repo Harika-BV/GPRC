@@ -2,7 +2,7 @@
   "name": "github-profile-readme",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.harikabv.com/GPRC",
+  "homepage": "http://www.harikabv.in/GPRC",
   "dependencies": {
     "-": "0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
